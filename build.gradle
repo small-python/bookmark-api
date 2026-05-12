@@ -18,21 +18,52 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// Core web framework — handles REST controllers and HTTP requests
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Data JPA — database access and ORM via Hibernate
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Spring Security — authentication and authorization framework
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Bean Validation — enables @Valid, @NotBlank, @Email etc on request bodies
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Flyway core — database migration engine
 	implementation 'org.flywaydb:flyway-core'
+
+	// Flyway PostgreSQL support — required for Flyway to work with PostgreSQL
 	implementation 'org.flywaydb:flyway-database-postgresql'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// JWT API — defines the JWT standard interfaces
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+
+	// JWT implementation — handles JWT creation and parsing at runtime
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+
+	// JWT Jackson integration — handles JSON serialisation inside JWT
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
+
+	// SpringDoc OpenAPI — generates Swagger UI and OpenAPI docs automatically
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9'
+
+	// PostgreSQL JDBC driver — connects the app to PostgreSQL at runtime
 	runtimeOnly 'org.postgresql:postgresql'
+
+	// Lombok — reduces boilerplate with annotations like @Getter, @Builder etc
+	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// DevTools — enables hot reload during development
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testCompileOnly 'org.projectlombok:lombok'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {

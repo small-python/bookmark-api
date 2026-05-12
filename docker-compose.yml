@@ -1,0 +1,28 @@
+services:
+  postgres:
+    # PostgreSQL 16 official image
+    image: postgres:16
+
+    # Name of the running container
+    container_name: bookmark_postgres
+
+    # Database credentials and name — used by Spring Boot to connect
+    environment:
+      POSTGRES_DB: bookmark_db
+      POSTGRES_USER: bookmark_user
+      POSTGRES_PASSWORD: bookmark_pass
+
+    # Exposes PostgreSQL on the default port so IntelliJ and Postman can connect
+    ports:
+      - "5432:5432"
+
+    # Persists database data so it survives container restarts
+    volumes:
+      - bookmark_postgres_data:/var/lib/postgresql/data
+
+    # Automatically restarts the container unless manually stopped
+    restart: unless-stopped
+
+# Named volume definition — stores the actual database files on disk
+volumes:
+  bookmark_postgres_data:
