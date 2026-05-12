@@ -55,6 +55,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// Loads environment variables from .env file into Spring's application context
+	implementation 'me.paulschwarz:spring-dotenv:4.0.0'
+
 	// DevTools — enables hot reload during development
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 

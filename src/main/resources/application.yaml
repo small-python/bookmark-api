@@ -4,23 +4,23 @@ spring:
     name: bookmark-api
 
   datasource:
-    # JDBC connection URL pointing to our Docker PostgreSQL container
-    url: jdbc:postgresql://localhost:5432/bookmark_db
-    username: bookmark_user
-    password: bookmark_pass
+    # JDBC connection URL — loaded from .env
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
+    open-in-view: false
     hibernate:
       # Validate schema against Flyway migrations — never auto-create or modify tables
       ddl-auto: validate
     properties:
       hibernate:
-        # Tells Hibernate to use PostgreSQL dialect for query generation
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         # Logs formatted SQL to the console during development
         format_sql: true
     show-sql: true
+
 
   flyway:
     # Enables Flyway automatic migration on startup
@@ -39,3 +39,14 @@ springdoc:
   # OpenAPI JSON spec available at this path
   api-docs:
     path: /api-docs
+
+jwt:
+  # Secret key used to sign and verify JWT tokens — loaded from .env
+  secret: ${JWT_SECRET}
+  # Token expiration time in milliseconds — loaded from .env
+  expiration: ${JWT_EXPIRATION}
+
+logging:
+  level:
+    # Silences the expected warning about AuthenticationProvider and UserDetailsService coexisting
+    org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer: ERROR
