@@ -1,5 +1,6 @@
 package com.ahmed.bookmark.dto.request;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -34,5 +35,6 @@ public class RegisterRequest {
             regexp = "^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).+$",
             message = "Password must contain at least one uppercase letter, one digit, and one special character"
     )
+    @Schema (example = "passWord@123")
     private String password;
 }

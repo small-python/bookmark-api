@@ -45,6 +45,7 @@ public class BookmarkService {
 
     // Retrieves a paginated list of all non-deleted bookmarks for the current user
     // Supports sorting by any field in ascending or descending order
+    @Transactional(readOnly = true)
     public PageResponse<BookmarkResponse> getAllBookmarks(int page, int size, String sortBy, String sortDir) {
         User currentUser = userService.getCurrentUser();
         Pageable pageable = buildPageable(page, size, sortBy, sortDir);
@@ -56,6 +57,7 @@ public class BookmarkService {
     // Retrieves a single bookmark by ID
     // Throws ResourceNotFoundException if the bookmark does not exist or is soft deleted
     // Throws UnauthorizedAccessException if the bookmark belongs to another user
+    @Transactional(readOnly = true)
     public BookmarkResponse getBookmarkById(Long id) {
         User currentUser = userService.getCurrentUser();
         Bookmark bookmark = findBookmarkOwnedByUser(id, currentUser.getId());
@@ -125,6 +127,7 @@ public class BookmarkService {
 
     // Searches bookmarks by keyword in title or URL — case-insensitive
     // Returns paginated results
+    @Transactional(readOnly = true)
     public PageResponse<BookmarkResponse> searchBookmarks(
             String keyword, int page, int size, String sortBy, String sortDir) {
         User currentUser = userService.getCurrentUser();
@@ -136,6 +139,7 @@ public class BookmarkService {
 
     // Filters bookmarks by category ID — returns paginated results
     // Throws ResourceNotFoundException if the category does not exist
+    @Transactional(readOnly = true)
     public PageResponse<BookmarkResponse> getBookmarksByCategory(
             Long categoryId, int page, int size, String sortBy, String sortDir) {
         User currentUser = userService.getCurrentUser();
@@ -155,6 +159,7 @@ public class BookmarkService {
 
     // Filters bookmarks by tag ID — returns paginated results
     // Throws ResourceNotFoundException if the tag does not exist
+    @Transactional(readOnly = true)
     public PageResponse<BookmarkResponse> getBookmarksByTag(
             Long tagId, int page, int size, String sortBy, String sortDir) {
         User currentUser = userService.getCurrentUser();

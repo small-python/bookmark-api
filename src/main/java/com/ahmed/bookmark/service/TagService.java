@@ -8,6 +8,7 @@ import com.ahmed.bookmark.exception.DuplicateResourceException;
 import com.ahmed.bookmark.exception.ResourceNotFoundException;
 import com.ahmed.bookmark.exception.UnauthorizedAccessException;
 import com.ahmed.bookmark.repository.TagRepository;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,7 @@ public class TagService {
     private final UserService userService;
 
     // Retrieves all tags belonging to the currently authenticated user
+    @Transactional(readOnly = true)
     public List<TagResponse> getAllTags() {
         User currentUser = userService.getCurrentUser();
         return tagRepository.findByUserId(currentUser.getId())
@@ -38,6 +40,7 @@ public class TagService {
     // Retrieves a single tag by ID
     // Throws ResourceNotFoundException if the tag does not exist
     // Throws UnauthorizedAccessException if the tag belongs to another user
+    @Transactional(readOnly = true)
     public TagResponse getTagById(Long id) {
         User currentUser = userService.getCurrentUser();
         Tag tag = findTagOwnedByUser(id, currentUser.getId());
@@ -46,6 +49,7 @@ public class TagService {
 
     // Creates a new tag for the currently authenticated user
     // Throws DuplicateResourceException if a tag with the same name already exists
+    @Transactional
     public TagResponse createTag(TagRequest request) {
         User currentUser = userService.getCurrentUser();
 
@@ -68,6 +72,7 @@ public class TagService {
     // Throws ResourceNotFoundException if the tag does not exist
     // Throws UnauthorizedAccessException if the tag belongs to another user
     // Throws DuplicateResourceException if the new name conflicts with an existing tag
+    @Transactional
     public TagResponse updateTag(Long id, TagRequest request) {
         User currentUser = userService.getCurrentUser();
         Tag tag = findTagOwnedByUser(id, currentUser.getId());
@@ -90,6 +95,7 @@ public class TagService {
     // Removes all associations with bookmarks automatically via cascade on the join table
     // Throws ResourceNotFoundException if the tag does not exist
     // Throws UnauthorizedAccessException if the tag belongs to another user
+    @Transactional
     public void deleteTag(Long id) {
         User currentUser = userService.getCurrentUser();
         Tag tag = findTagOwnedByUser(id, currentUser.getId());

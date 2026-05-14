@@ -10,6 +10,7 @@ import com.ahmed.bookmark.exception.UnauthorizedAccessException;
 import com.ahmed.bookmark.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,6 +28,7 @@ public class CategoryService {
     private final UserService userService;
 
     // Retrieves all categories belonging to the currently authenticated user
+    @Transactional(readOnly = true)
     public List<CategoryResponse> getAllCategories() {
         User currentUser = userService.getCurrentUser();
         return categoryRepository.findByUserId(currentUser.getId())
@@ -38,6 +40,7 @@ public class CategoryService {
     // Retrieves a single category by ID
     // Throws ResourceNotFoundException if the category does not exist
     // Throws UnauthorizedAccessException if the category belongs to another user
+    @Transactional(readOnly = true)
     public CategoryResponse getCategoryById(Long id) {
         User currentUser = userService.getCurrentUser();
         Category category = findCategoryOwnedByUser(id, currentUser.getId());
@@ -46,6 +49,7 @@ public class CategoryService {
 
     // Creates a new category for the currently authenticated user
     // Throws DuplicateResourceException if a category with the same name already exists
+    @Transactional
     public CategoryResponse createCategory(CategoryRequest request) {
         User currentUser = userService.getCurrentUser();
 
@@ -69,6 +73,7 @@ public class CategoryService {
     // Throws ResourceNotFoundException if the category does not exist
     // Throws UnauthorizedAccessException if the category belongs to another user
     // Throws DuplicateResourceException if the new name conflicts with an existing category
+    @Transactional
     public CategoryResponse updateCategory(Long id, CategoryRequest request) {
         User currentUser = userService.getCurrentUser();
         Category category = findCategoryOwnedByUser(id, currentUser.getId());
@@ -92,6 +97,7 @@ public class CategoryService {
     // Bookmarks in this category will have their category set to null — not deleted
     // Throws ResourceNotFoundException if the category does not exist
     // Throws UnauthorizedAccessException if the category belongs to another user
+    @Transactional
     public void deleteCategory(Long id) {
         User currentUser = userService.getCurrentUser();
         Category category = findCategoryOwnedByUser(id, currentUser.getId());
