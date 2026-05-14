@@ -1,0 +1,2116 @@
+{
+  "info": {
+    "_postman_id": "955a483b-e779-4fa5-abe7-1f48c16257fb",
+    "name": "Bookmark API",
+    "description": "A RESTful API for managing bookmarks with categories and tags. Built with Java 21 and Spring Boot. Register an account, login to get a JWT token, then click Authorize to test protected endpoints.\n\nContact Support:\n Name: Ahmed Yinusa\n Email: yinusaahmed80@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52449088"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "tags",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get tag by ID",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/tags/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "tags",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Returns a single tag by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/tags/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "tags",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 7247,\n  \"name\": \"string\",\n  \"createdAt\": \"1995-08-19T14:30:58.057Z\",\n  \"updatedAt\": \"2001-04-12T23:38:19.711Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update tag",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/tags/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "tags",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Updates an existing tag by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/tags/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "tags",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 7247,\n  \"name\": \"string\",\n  \"createdAt\": \"1995-08-19T14:30:58.057Z\",\n  \"updatedAt\": \"2001-04-12T23:38:19.711Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete tag",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/tags/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "tags",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Deletes a tag by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/tags/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "tags",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get all tags",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/tags",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "tags"
+                      ]
+                    },
+                    "description": "Returns all tags belonging to the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/tags",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "tags"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n  {\n    \"id\": 8942,\n    \"name\": \"string\",\n    \"createdAt\": \"1998-04-30T10:23:38.595Z\",\n    \"updatedAt\": \"2004-03-23T17:21:24.861Z\"\n  },\n  {\n    \"id\": 5651,\n    \"name\": \"string\",\n    \"createdAt\": \"1997-03-14T10:07:24.747Z\",\n    \"updatedAt\": \"2001-07-19T11:15:36.239Z\"\n  }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Create tag",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/tags",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "tags"
+                      ]
+                    },
+                    "description": "Creates a new tag for the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/tags",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "tags"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 7247,\n  \"name\": \"string\",\n  \"createdAt\": \"1995-08-19T14:30:58.057Z\",\n  \"updatedAt\": \"2001-04-12T23:38:19.711Z\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "categories",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get category by ID",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Returns a single category by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/categories/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "categories",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 4732,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"bookmarkCount\": 7249,\n  \"createdAt\": \"2006-11-03T05:52:26.632Z\",\n  \"updatedAt\": \"1965-11-19T12:25:58.431Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update category",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Updates an existing category by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/categories/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "categories",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 4732,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"bookmarkCount\": 7249,\n  \"createdAt\": \"2006-11-03T05:52:26.632Z\",\n  \"updatedAt\": \"1965-11-19T12:25:58.431Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete category",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Deletes a category by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/categories/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "categories",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get all categories",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "categories"
+                      ]
+                    },
+                    "description": "Returns all categories belonging to the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n  {\n    \"id\": 5893,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"bookmarkCount\": 612,\n    \"createdAt\": \"2008-08-22T16:01:20.441Z\",\n    \"updatedAt\": \"2009-07-20T17:53:28.166Z\"\n  },\n  {\n    \"id\": 8590,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"bookmarkCount\": 6639,\n    \"createdAt\": \"2023-03-08T04:43:16.198Z\",\n    \"updatedAt\": \"1982-07-17T06:11:28.245Z\"\n  }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Create category",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "categories"
+                      ]
+                    },
+                    "description": "Creates a new category for the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 4732,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"bookmarkCount\": 7249,\n  \"createdAt\": \"2006-11-03T05:52:26.632Z\",\n  \"updatedAt\": \"1965-11-19T12:25:58.431Z\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bookmarks",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get bookmark by ID",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Returns a single bookmark by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 6184,\n  \"title\": \"string\",\n  \"url\": \"string\",\n  \"description\": \"string\",\n  \"category\": {\n    \"id\": 1033,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"bookmarkCount\": 620,\n    \"createdAt\": \"2000-12-01T09:38:28.557Z\",\n    \"updatedAt\": \"2004-05-18T05:53:55.333Z\"\n  },\n  \"tags\": [\n    {\n      \"id\": 5452,\n      \"name\": \"string\",\n      \"createdAt\": \"1984-03-26T00:45:37.706Z\",\n      \"updatedAt\": \"1978-10-08T14:32:06.536Z\"\n    },\n    {\n      \"id\": 5153,\n      \"name\": \"string\",\n      \"createdAt\": \"1985-04-11T10:27:20.475Z\",\n      \"updatedAt\": \"2003-05-22T03:39:35.888Z\"\n    }\n  ],\n  \"createdAt\": \"1954-01-21T03:52:56.085Z\",\n  \"updatedAt\": \"1984-02-28T13:13:16.820Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update bookmark",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"string\",\n  \"url\": \"http://lTK=MEL+V\",\n  \"description\": \"string\",\n  \"categoryId\": 6022,\n  \"tagIds\": [\n    9552,\n    5701\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Updates an existing bookmark by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"string\",\n  \"url\": \"http://lTK=MEL+V\",\n  \"description\": \"string\",\n  \"categoryId\": 6022,\n  \"tagIds\": [\n    9552,\n    5701\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 6184,\n  \"title\": \"string\",\n  \"url\": \"string\",\n  \"description\": \"string\",\n  \"category\": {\n    \"id\": 1033,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"bookmarkCount\": 620,\n    \"createdAt\": \"2000-12-01T09:38:28.557Z\",\n    \"updatedAt\": \"2004-05-18T05:53:55.333Z\"\n  },\n  \"tags\": [\n    {\n      \"id\": 5452,\n      \"name\": \"string\",\n      \"createdAt\": \"1984-03-26T00:45:37.706Z\",\n      \"updatedAt\": \"1978-10-08T14:32:06.536Z\"\n    },\n    {\n      \"id\": 5153,\n      \"name\": \"string\",\n      \"createdAt\": \"1985-04-11T10:27:20.475Z\",\n      \"updatedAt\": \"2003-05-22T03:39:35.888Z\"\n    }\n  ],\n  \"createdAt\": \"1954-01-21T03:52:56.085Z\",\n  \"updatedAt\": \"1984-02-28T13:13:16.820Z\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete bookmark",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9431"
+                            }
+                          ]
+                        },
+                        "description": "Soft deletes a bookmark by its ID — the record is hidden but not removed"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9431"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "tag",
+                  "item": [
+                    {
+                      "name": "{tagId}",
+                      "item": [
+                        {
+                          "name": "Get bookmarks by tag",
+                          "request": {
+                            "auth": {
+                              "type": "bearer",
+                              "bearer": [
+                                {
+                                  "key": "token",
+                                  "value": "{{bearerToken}}",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/tag/:tagId?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                "tag",
+                                ":tagId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "page",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "20"
+                                },
+                                {
+                                  "key": "sortBy",
+                                  "value": "createdAt"
+                                },
+                                {
+                                  "key": "sortDir",
+                                  "value": "desc"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "tagId",
+                                  "value": "9431"
+                                }
+                              ]
+                            },
+                            "description": "Returns paginated bookmarks filtered by tag ID"
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/bookmarks/tag/:tagId?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "bookmarks",
+                                    "tag",
+                                    ":tagId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "page",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "key": "size",
+                                      "value": "20"
+                                    },
+                                    {
+                                      "key": "sortBy",
+                                      "value": "createdAt"
+                                    },
+                                    {
+                                      "key": "sortDir",
+                                      "value": "desc"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "tagId",
+                                      "value": "9431"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"content\": [\n    {\n      \"id\": 585,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 1657,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 9644,\n        \"createdAt\": \"1995-05-19T08:52:48.624Z\",\n        \"updatedAt\": \"2017-02-14T14:48:58.668Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 3344,\n          \"name\": \"string\",\n          \"createdAt\": \"1996-11-08T23:09:44.956Z\",\n          \"updatedAt\": \"2025-07-28T21:10:32.161Z\"\n        },\n        {\n          \"id\": 9760,\n          \"name\": \"string\",\n          \"createdAt\": \"2017-07-13T20:27:44.325Z\",\n          \"updatedAt\": \"2004-05-12T18:23:16.041Z\"\n        }\n      ],\n      \"createdAt\": \"2022-08-19T22:42:00.353Z\",\n      \"updatedAt\": \"1950-07-27T14:34:56.662Z\"\n    },\n    {\n      \"id\": 7982,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 9390,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 5143,\n        \"createdAt\": \"1965-11-11T13:38:26.300Z\",\n        \"updatedAt\": \"1994-04-24T17:16:00.458Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 942,\n          \"name\": \"string\",\n          \"createdAt\": \"1957-07-21T13:32:32.223Z\",\n          \"updatedAt\": \"1986-11-29T05:46:30.329Z\"\n        },\n        {\n          \"id\": 1525,\n          \"name\": \"string\",\n          \"createdAt\": \"1948-11-02T05:46:24.306Z\",\n          \"updatedAt\": \"2003-10-08T15:52:28.557Z\"\n        }\n      ],\n      \"createdAt\": \"2000-12-30T17:28:40.389Z\",\n      \"updatedAt\": \"2000-05-21T03:19:41.992Z\"\n    }\n  ],\n  \"page\": 1519,\n  \"size\": 5014,\n  \"totalElements\": 5457,\n  \"totalPages\": 1092,\n  \"last\": true,\n  \"first\": false\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "search",
+                  "item": [
+                    {
+                      "name": "Search bookmarks",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "{{bearerToken}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks/search?keyword=string&page=0&size=20&sortBy=createdAt&sortDir=desc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "key": "keyword",
+                              "value": "string"
+                            },
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "20"
+                            },
+                            {
+                              "key": "sortBy",
+                              "value": "createdAt"
+                            },
+                            {
+                              "key": "sortDir",
+                              "value": "desc"
+                            }
+                          ]
+                        },
+                        "description": "Searches bookmarks by keyword in title or URL"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/search?keyword=string&page=0&size=20&sortBy=createdAt&sortDir=desc",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                "search"
+                              ],
+                              "query": [
+                                {
+                                  "key": "keyword",
+                                  "value": "string"
+                                },
+                                {
+                                  "key": "page",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "20"
+                                },
+                                {
+                                  "key": "sortBy",
+                                  "value": "createdAt"
+                                },
+                                {
+                                  "key": "sortDir",
+                                  "value": "desc"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"content\": [\n    {\n      \"id\": 585,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 1657,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 9644,\n        \"createdAt\": \"1995-05-19T08:52:48.624Z\",\n        \"updatedAt\": \"2017-02-14T14:48:58.668Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 3344,\n          \"name\": \"string\",\n          \"createdAt\": \"1996-11-08T23:09:44.956Z\",\n          \"updatedAt\": \"2025-07-28T21:10:32.161Z\"\n        },\n        {\n          \"id\": 9760,\n          \"name\": \"string\",\n          \"createdAt\": \"2017-07-13T20:27:44.325Z\",\n          \"updatedAt\": \"2004-05-12T18:23:16.041Z\"\n        }\n      ],\n      \"createdAt\": \"2022-08-19T22:42:00.353Z\",\n      \"updatedAt\": \"1950-07-27T14:34:56.662Z\"\n    },\n    {\n      \"id\": 7982,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 9390,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 5143,\n        \"createdAt\": \"1965-11-11T13:38:26.300Z\",\n        \"updatedAt\": \"1994-04-24T17:16:00.458Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 942,\n          \"name\": \"string\",\n          \"createdAt\": \"1957-07-21T13:32:32.223Z\",\n          \"updatedAt\": \"1986-11-29T05:46:30.329Z\"\n        },\n        {\n          \"id\": 1525,\n          \"name\": \"string\",\n          \"createdAt\": \"1948-11-02T05:46:24.306Z\",\n          \"updatedAt\": \"2003-10-08T15:52:28.557Z\"\n        }\n      ],\n      \"createdAt\": \"2000-12-30T17:28:40.389Z\",\n      \"updatedAt\": \"2000-05-21T03:19:41.992Z\"\n    }\n  ],\n  \"page\": 1519,\n  \"size\": 5014,\n  \"totalElements\": 5457,\n  \"totalPages\": 1092,\n  \"last\": true,\n  \"first\": false\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "category",
+                  "item": [
+                    {
+                      "name": "{categoryId}",
+                      "item": [
+                        {
+                          "name": "Get bookmarks by category",
+                          "request": {
+                            "auth": {
+                              "type": "bearer",
+                              "bearer": [
+                                {
+                                  "key": "token",
+                                  "value": "{{bearerToken}}",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/bookmarks/category/:categoryId?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "bookmarks",
+                                "category",
+                                ":categoryId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "page",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "20"
+                                },
+                                {
+                                  "key": "sortBy",
+                                  "value": "createdAt"
+                                },
+                                {
+                                  "key": "sortDir",
+                                  "value": "desc"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "categoryId",
+                                  "value": "9431"
+                                }
+                              ]
+                            },
+                            "description": "Returns paginated bookmarks filtered by category ID"
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/bookmarks/category/:categoryId?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "bookmarks",
+                                    "category",
+                                    ":categoryId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "page",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "key": "size",
+                                      "value": "20"
+                                    },
+                                    {
+                                      "key": "sortBy",
+                                      "value": "createdAt"
+                                    },
+                                    {
+                                      "key": "sortDir",
+                                      "value": "desc"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "categoryId",
+                                      "value": "9431"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"content\": [\n    {\n      \"id\": 585,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 1657,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 9644,\n        \"createdAt\": \"1995-05-19T08:52:48.624Z\",\n        \"updatedAt\": \"2017-02-14T14:48:58.668Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 3344,\n          \"name\": \"string\",\n          \"createdAt\": \"1996-11-08T23:09:44.956Z\",\n          \"updatedAt\": \"2025-07-28T21:10:32.161Z\"\n        },\n        {\n          \"id\": 9760,\n          \"name\": \"string\",\n          \"createdAt\": \"2017-07-13T20:27:44.325Z\",\n          \"updatedAt\": \"2004-05-12T18:23:16.041Z\"\n        }\n      ],\n      \"createdAt\": \"2022-08-19T22:42:00.353Z\",\n      \"updatedAt\": \"1950-07-27T14:34:56.662Z\"\n    },\n    {\n      \"id\": 7982,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 9390,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 5143,\n        \"createdAt\": \"1965-11-11T13:38:26.300Z\",\n        \"updatedAt\": \"1994-04-24T17:16:00.458Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 942,\n          \"name\": \"string\",\n          \"createdAt\": \"1957-07-21T13:32:32.223Z\",\n          \"updatedAt\": \"1986-11-29T05:46:30.329Z\"\n        },\n        {\n          \"id\": 1525,\n          \"name\": \"string\",\n          \"createdAt\": \"1948-11-02T05:46:24.306Z\",\n          \"updatedAt\": \"2003-10-08T15:52:28.557Z\"\n        }\n      ],\n      \"createdAt\": \"2000-12-30T17:28:40.389Z\",\n      \"updatedAt\": \"2000-05-21T03:19:41.992Z\"\n    }\n  ],\n  \"page\": 1519,\n  \"size\": 5014,\n  \"totalElements\": 5457,\n  \"totalPages\": 1092,\n  \"last\": true,\n  \"first\": false\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get all bookmarks",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/bookmarks?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "bookmarks"
+                      ],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "key": "size",
+                          "value": "20"
+                        },
+                        {
+                          "key": "sortBy",
+                          "value": "createdAt"
+                        },
+                        {
+                          "key": "sortDir",
+                          "value": "desc"
+                        }
+                      ]
+                    },
+                    "description": "Returns a paginated list of all bookmarks for the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks?page=0&size=20&sortBy=createdAt&sortDir=desc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks"
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "20"
+                            },
+                            {
+                              "key": "sortBy",
+                              "value": "createdAt"
+                            },
+                            {
+                              "key": "sortDir",
+                              "value": "desc"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"content\": [\n    {\n      \"id\": 585,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 1657,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 9644,\n        \"createdAt\": \"1995-05-19T08:52:48.624Z\",\n        \"updatedAt\": \"2017-02-14T14:48:58.668Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 3344,\n          \"name\": \"string\",\n          \"createdAt\": \"1996-11-08T23:09:44.956Z\",\n          \"updatedAt\": \"2025-07-28T21:10:32.161Z\"\n        },\n        {\n          \"id\": 9760,\n          \"name\": \"string\",\n          \"createdAt\": \"2017-07-13T20:27:44.325Z\",\n          \"updatedAt\": \"2004-05-12T18:23:16.041Z\"\n        }\n      ],\n      \"createdAt\": \"2022-08-19T22:42:00.353Z\",\n      \"updatedAt\": \"1950-07-27T14:34:56.662Z\"\n    },\n    {\n      \"id\": 7982,\n      \"title\": \"string\",\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"category\": {\n        \"id\": 9390,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"bookmarkCount\": 5143,\n        \"createdAt\": \"1965-11-11T13:38:26.300Z\",\n        \"updatedAt\": \"1994-04-24T17:16:00.458Z\"\n      },\n      \"tags\": [\n        {\n          \"id\": 942,\n          \"name\": \"string\",\n          \"createdAt\": \"1957-07-21T13:32:32.223Z\",\n          \"updatedAt\": \"1986-11-29T05:46:30.329Z\"\n        },\n        {\n          \"id\": 1525,\n          \"name\": \"string\",\n          \"createdAt\": \"1948-11-02T05:46:24.306Z\",\n          \"updatedAt\": \"2003-10-08T15:52:28.557Z\"\n        }\n      ],\n      \"createdAt\": \"2000-12-30T17:28:40.389Z\",\n      \"updatedAt\": \"2000-05-21T03:19:41.992Z\"\n    }\n  ],\n  \"page\": 1519,\n  \"size\": 5014,\n  \"totalElements\": 5457,\n  \"totalPages\": 1092,\n  \"last\": true,\n  \"first\": false\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Create bookmark",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"title\": \"string\",\n  \"url\": \"http://lTK=MEL+V\",\n  \"description\": \"string\",\n  \"categoryId\": 6022,\n  \"tagIds\": [\n    9552,\n    5701\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/bookmarks",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "bookmarks"
+                      ]
+                    },
+                    "description": "Creates a new bookmark for the current user"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"string\",\n  \"url\": \"http://lTK=MEL+V\",\n  \"description\": \"string\",\n  \"categoryId\": 6022,\n  \"tagIds\": [\n    9552,\n    5701\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/bookmarks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "bookmarks"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 6184,\n  \"title\": \"string\",\n  \"url\": \"string\",\n  \"description\": \"string\",\n  \"category\": {\n    \"id\": 1033,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"bookmarkCount\": 620,\n    \"createdAt\": \"2000-12-01T09:38:28.557Z\",\n    \"updatedAt\": \"2004-05-18T05:53:55.333Z\"\n  },\n  \"tags\": [\n    {\n      \"id\": 5452,\n      \"name\": \"string\",\n      \"createdAt\": \"1984-03-26T00:45:37.706Z\",\n      \"updatedAt\": \"1978-10-08T14:32:06.536Z\"\n    },\n    {\n      \"id\": 5153,\n      \"name\": \"string\",\n      \"createdAt\": \"1985-04-11T10:27:20.475Z\",\n      \"updatedAt\": \"2003-05-22T03:39:35.888Z\"\n    }\n  ],\n  \"createdAt\": \"1954-01-21T03:52:56.085Z\",\n  \"updatedAt\": \"1984-02-28T13:13:16.820Z\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "auth",
+              "item": [
+                {
+                  "name": "register",
+                  "item": [
+                    {
+                      "name": "Register a new user",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"string\",\n  \"fullName\": \"string\",\n  \"password\": \"passWord@123\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/auth/register",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "auth",
+                            "register"
+                          ]
+                        },
+                        "description": "Creates a new account and returns a JWT token"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"email\": \"string\",\n  \"fullName\": \"string\",\n  \"password\": \"passWord@123\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/auth/register",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "register"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"token\": \"string\",\n  \"id\": 7754,\n  \"fullName\": \"string\",\n  \"email\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "login",
+                  "item": [
+                    {
+                      "name": "Login",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "exec": [
+                              "const response = pm.response.json();",
+                              "pm.environment.set(\"token\", response.token);"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {},
+                            "requests": {}
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"ahmed.yinusa@test.com\",\n  \"password\": \"passWord@123\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/auth/login",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "auth",
+                            "login"
+                          ]
+                        },
+                        "description": "Authenticates a user and returns a JWT token"
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/auth/login",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "login"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"token\": \"string\",\n  \"id\": 7754,\n  \"fullName\": \"string\",\n  \"email\": \"string\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "value": ""
+    }
+  ]
+}

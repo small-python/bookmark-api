@@ -46,7 +46,7 @@ public class SecurityConfig {
                                 // Allow Swagger UI and OpenAPI docs without authentication
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
-                                "/api-docs/**"
+                                "/v3/api-docs/**"
                         ).permitAll()
                         // All other endpoints require a valid JWT token
                         .anyRequest().authenticated()

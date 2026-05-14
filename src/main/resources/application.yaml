@@ -36,9 +36,6 @@ springdoc:
   # Swagger UI available at http://localhost:8080/swagger-ui/index.html
   swagger-ui:
     path: /swagger-ui/index.html
-  # OpenAPI JSON spec available at this path
-  api-docs:
-    path: /api-docs
 
 jwt:
   # Secret key used to sign and verify JWT tokens — loaded from .env
